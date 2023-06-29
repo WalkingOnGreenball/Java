@@ -85,23 +85,38 @@ public class Exercise_Array {
 		// 단, 결과는 오름차순으로 정렬
 		// 로또 번호는 6개. 로또 번호의 범위는 1~45
 		
-		
+		int [] lottoNums = new int[6];
 		Random rand = new Random();
-		for (int i = 0; i < 10; i++) {		
-		System.out.println(rand.nextInt(10));
+		
+		// 중복 없이 1~45 사이의 랜덤한 수를 6개 뽑는 것
+		for (int i = 0; i < lottoNums.length; i++) {
+			lottoNums [i] = rand.nextInt(45)+1;
+			for (int e = 0; e < i; e++) {
+				if (lottoNums[i] == lottoNums[e]) {
+					// 같으면 다시 뽑음
+					i--;
+					break;
+				}
+			}
 		}
 		
+		// 버블 정렬
+		// for의 변수가 증가하기만 하면 됨 그래서 쉬움
+		// 단, 안에 있는 for문의 조건식의 최대값은 감소 (-i) 해야함.
+		for (int i = 0; i < lottoNums.length; i++) {
+			for (int j = 0; j < (lottoNums.length-1)-i; j++) {
+				if (lottoNums [j] > lottoNums [j+1]) { // 왼쪽이 크면 자리바꿈
+					int temp = lottoNums[j+1]; // 왼쪽에 있는 값이 지워지기 전에 킵 해놓음
+					lottoNums[j+1] = lottoNums[j]; // 오른쪽에 있는 놈을 왼쪽에 대입함.
+					lottoNums[j] = temp; // 킵 해놓은 것을 오른쪽에 대입함.
+				}
+			}
+		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		// 배열 출력 
+		for (int h = 0; h < lottoNums.length; h++) {
+			System.out.print(lottoNums[h] + " ");
+		}		
 		
 		
 	}
