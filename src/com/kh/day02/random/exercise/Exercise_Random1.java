@@ -57,7 +57,7 @@ public class Exercise_Random1 {
 		
 		
 		
-//		
+		
 //		Scanner sc = new Scanner(System.in); 
 //		Random rand = new Random(); 
 //		System.out.println("====== 동전 앞 뒤 맞추기 ======="); 

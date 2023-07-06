@@ -65,9 +65,9 @@ public class StudentRun {
 	}
 	public static void testResult(Student [] stdArr) {
 		for(int i = 0; i < stdArr.length; i++) {			
-			double avg = stdArr[0].getAvg();
-			int num1 = stdArr[0].getScore1();
-			int num2 = stdArr[0].getScore2();
+			double avg = stdArr[i].getAvg();
+			int num1 = stdArr[i].getScore1();
+			int num2 = stdArr[i].getScore2();
 			System.out.println((i+1)+"번째, " + stdArr[i].getName() + "학생 확인 결과");
 			
 			if(avg >= 60) {

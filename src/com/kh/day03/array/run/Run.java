@@ -7,10 +7,10 @@ public class Run {
 	public static void main (String [] args)
 	{
 		Exercise_Array exArr = new Exercise_Array();
-//		exArr.exercise1();
+		exArr.exercise1();
 //		exArr.exercise2();
 //		exArr.arrayCopyExercise();
-		exArr.lottoExercise();
+//		exArr.lottoExercise();
 		
 		
 		Exercise_For exFor = new Exercise_For();
