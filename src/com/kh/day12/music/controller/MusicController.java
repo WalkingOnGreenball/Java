@@ -81,4 +81,72 @@ public class MusicController {
 	public void removeMusic(int i) {
 		mList.remove(i); // mList에서 삭제
 	}
+	
+	public void insertionSortByTitleASC() {
+		
+	}
+	
+	public void selectionSortByTitleASC() {
+		
+	}
+
+	public void bubbleSortByTitleASC() {
+//		int [] nums; -> mList로 변경 필요
+		for(int i = 0; i < mList.size()-1; i++) {
+			for(int j = 0; j < (mList.size()-1)-i; j++) {
+				Music mOne = mList.get(j);
+				Music mTwo = mList.get(j+1);
+				if(mOne.getTitle().compareTo(mTwo.getTitle()) > 0) { // String 끼리의 비교에 꺽쇠(>)는 안됨. // 결과 값이 0이면 동일함, 양수 값이면 왼쪽이 순서가 더 큼, 음수 값이면 왼쪽이 순서가 작음
+					Music temp = mOne;
+					mList.set(j, mTwo);
+					mList.set(j+1, temp);
+				}
+			}
+		}
+	}
+	
+	public void bubbleSortByTitleDESC() {
+//		int [] nums; -> mList로 변경 필요
+		for(int i = 0; i < mList.size()-1; i++) {
+			for(int j = 0; j < (mList.size()-1)-i; j++) {
+				Music mOne = mList.get(j);
+				Music mTwo = mList.get(j+1);
+				if(mOne.getTitle().compareTo(mTwo.getTitle()) < 0) { // String 끼리의 비교에 꺽쇠(>)는 안됨. // 결과 값이 0이면 동일함, 양수 값이면 왼쪽이 순서가 더 큼, 음수 값이면 왼쪽이 순서가 작음
+					Music temp = mOne;
+					mList.set(j, mTwo);
+					mList.set(j+1, temp);
+				}
+			}
+		}
+	}
+	
+	public void bubbleSortBySingerASC() {
+//		int [] nums; -> mList로 변경 필요
+		for(int i = 0; i < mList.size()-1; i++) {
+			for(int j = 0; j < (mList.size()-1)-i; j++) {
+				Music mOne = mList.get(j);
+				Music mTwo = mList.get(j+1);
+				if(mOne.getSinger().compareTo(mTwo.getSinger()) > 0) { // String 끼리의 비교에 꺽쇠(>)는 안됨. // 결과 값이 0이면 동일함, 양수 값이면 왼쪽이 순서가 더 큼, 음수 값이면 왼쪽이 순서가 작음
+					Music temp = mOne;
+					mList.set(j, mTwo);
+					mList.set(j+1, temp);
+				}
+			}
+		}
+	}
+	
+	public void bubbleSortBySingerDESC() {
+//		int [] nums; -> mList로 변경 필요
+		for(int i = 0; i < mList.size()-1; i++) {
+			for(int j = 0; j < (mList.size()-1)-i; j++) {
+				Music mOne = mList.get(j);
+				Music mTwo = mList.get(j+1);
+				if(mOne.getSinger().compareTo(mTwo.getSinger()) < 0) { // String 끼리의 비교에 꺽쇠(>)는 안됨. // 결과 값이 0이면 동일함, 양수 값이면 왼쪽이 순서가 더 큼, 음수 값이면 왼쪽이 순서가 작음
+					Music temp = mOne;
+					mList.set(j, mTwo);
+					mList.set(j+1, temp);
+				}
+			}
+		}
+	}
 }
